@@ -1,0 +1,49 @@
+@import "../../../../../scss/variables";
+@import "../../../../../scss/mixins";
+@import "../../../../../styles";
+
+
+.edit-post {
+  .error {
+    color: $red-900;
+    background-color: $red-300;
+    border: solid 1px $red-400;
+  }
+
+  .edit-form {
+    width: auto;
+    display: inline-block;
+    input, textarea, select, editor {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .edit-post-buttons {
+      display: flex;
+      margin: 1.2em 0;
+      .saveButton {
+        color: white;
+        background-color: $blue-500;
+        border: solid 1px $blue-600;
+        margin-right: .8em;
+        @include sbd_btn;
+        @extend .centerText;
+      }
+
+      .greyButton {
+        color: $gray-900;
+        background-color: $gray-300;
+        border: solid 1px $gray-400;
+        @include sbd_btn;
+        @extend .centerText;
+      }
+    }
+
+  }
+
+}
+
+// media query standards: 650px, ...
+@media (min-width: 650px) {
+
+}

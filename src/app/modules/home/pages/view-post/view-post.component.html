@@ -1,0 +1,22 @@
+<div class="view-post" *ngIf="post$ | async as post">
+  <div >
+    <h1 class="centerText">{{post.header}}</h1>
+  </div>
+<!--  <div>-->
+<!--    <h3 class="subheader">{{post.subheader}}</h3>-->
+<!--  </div>-->
+  <div>
+    <h5 class="centerText">Written by {{post.author}}</h5>
+  </div>
+  <div class="container" *ngIf="post.youtubeUrl">
+    <div class="iframe-container">
+      <iframe class="responsive-iframe" [src]="post.youtubeUrl"
+              frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+    </div>
+  </div>
+  <div class="bodyText" [innerHTML]="post.content"></div>
+  <div class="centered">
+    <a class="readBtn" routerLink="/">Home</a>
+  </div>
+
+</div>

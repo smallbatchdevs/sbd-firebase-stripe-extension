@@ -1,0 +1,41 @@
+<div class="login-page">
+  <div class="login-section">
+    <div class="login-card">
+      <div *ngIf="!emailEnabled; else emailLogin">
+        <h3 class="login-card-header">Select an option!</h3>
+        <hr>
+        <ul class="login-providers">
+          <li>
+            <div class="login-button google" (click)="googleLogin()">Sign In With Google</div>
+            <div class="login-button twitter" (click)="twitterLogin()">Sign In With Twitter</div>
+            <div class="login-button facebook" (click)="facebookLogin()">Sign In With Facebook</div>
+            <div class="login-button github" (click)="githubLogin()">Sign In With Github</div>
+            <div class="login-button github" (click)="emailEnabled = true;">Sign In With Email</div>
+          </li>
+        </ul>
+      </div>
+      <ng-template #emailLogin>
+        <h3 class="login-card-header">Email Login</h3>
+        <hr>
+        <div class="email-login">
+          <div class="email-field">
+            <input type="email" placeholder="Email" [(ngModel)]="userEmail">
+          </div>
+          <div class="password-field">
+            <input type="password" placeholder="Password" [(ngModel)]="userPassword">
+          </div>
+          <div class="buttons">
+            <div class="email-login-btn btn1" (click)="emailPasswordLogin()">Login</div>
+            <div class="email-login-btn btn2" (click)="emailPasswordSignUp()">Sign Up</div>
+          </div>
+          <div class="other-options">
+            <ul>
+              <li><a href="" (click)="emailEnabled = false">Back To Providers</a></li>
+              <li><a href="">Forgot Password?</a></li>
+            </ul>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

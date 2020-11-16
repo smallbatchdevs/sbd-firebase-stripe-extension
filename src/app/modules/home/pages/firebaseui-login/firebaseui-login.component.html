@@ -1,0 +1,10 @@
+<div class="login-page">
+  <div class="login-section">
+    <div class="login-card">
+      <h3 class="login-card-header">Select an option!</h3>
+      <hr>
+      <firebase-ui (signInSuccessWithAuthResult)="successCallback($event)"
+        (signInFailure)="errorCallback($event)"></firebase-ui>
+    </div>
+  </div>
+</div>

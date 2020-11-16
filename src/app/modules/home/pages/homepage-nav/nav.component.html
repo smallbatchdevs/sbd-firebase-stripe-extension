@@ -1,0 +1,21 @@
+<div class="header">
+  <div class="header-links-nav">
+    <a [routerLinkActiveOptions]="{exact:true}"
+       routerLink="" routerLinkActive="active-link">Home</a>
+    <a routerLink="about" routerLinkActive="active-link" >About Us</a>
+    <a *ngIf="currentUser$ | async; else notLoggedIn" (click)="logoutUser()">Logout</a>
+
+    <ng-template #notLoggedIn>
+      <a routerLink="login">Login</a>
+    </ng-template>
+    <div class="header-right">
+      <a *ngIf="currentUser$ | async" class="logged-in-user">{{ currentUser$ | async }}</a>
+    </div>
+
+  </div>
+  <div class="header-image-div">
+    <img class="header-image" src="../../../../../assets/images/logo1.png" />
+
+  </div>
+</div>
+

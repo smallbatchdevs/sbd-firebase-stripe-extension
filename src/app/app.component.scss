@@ -1,0 +1,18 @@
+@import '../../src/scss/_variables.scss';
+
+.header {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  background-color: $main-dark-blue;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+
+}
+
+// media query standards: 650px, ...
+@media (min-width: 650px) {
+
+}
+

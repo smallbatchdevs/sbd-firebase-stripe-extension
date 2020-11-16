@@ -1,0 +1,37 @@
+<div class="homepage-component">
+
+
+<!--  TODO: Add the newsletter signup form back somewhere that makes sense -->
+<!--  <div class="newsletter-div">-->
+<!--    <div class="centerText"><h3>Join our Newsletter!</h3></div>-->
+<!--    <div class="newsletter-grid">-->
+<!--      <div><div>First Name</div> <input id="firstName" #firstName type="text"/></div>-->
+<!--      <div><div>Email</div> <input id="email" #email type="text"/></div>-->
+<!--    </div>-->
+<!--    <div class="join-btn" (click)="addContactToDatabase(email.value, firstName.value)">Join!</div>-->
+<!--  </div>-->
+  <div class="centered">
+    <div *ngIf="(currentUser$ | async) && !(doesNotHaveSubs$ | async)" class="buy-subs" (click)="sendToCheckout()">Donate $4.20 / Month</div>
+    <div *ngIf="doesNotHaveSubs$ | async" class="manage-account" (click)="sendToCustomerPortal()">Manage Account</div>
+  </div>
+  <div class="blog-post-cards" *ngIf="posts$ | async as blogs">
+    <div class="blog-post" *ngFor="let blog of blogs">
+      <!--   TODO: Add alt image for these   -->
+      <div class="preview-img"><img [src]="blog.previewImage"  alt=""/></div>
+      <div class="blog-post-card-content">
+        <div>
+          <h3 class="header-text">{{ blog.header }}</h3>
+        </div>
+        <div>
+          <p class="subheader-text">{{ blog.subheader | slice: 0:400 }}...</p>
+        </div>
+        <div class="blog-post-card-buttons">
+          <a class="read-btn" (click)="readPost(blog.uid)">Read</a>
+          <a *ngIf="currentUser$ | async" class="edit-btn" (click)="editPost(blog.uid)">Edit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

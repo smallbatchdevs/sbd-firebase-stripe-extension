@@ -1,0 +1,23 @@
+<div class="dashboard">
+  <div class="top-buttons">
+    <div *ngIf="isUserSmallBatchDevs$ | async">
+      <a class="logout-btn" href="" (click)="logout()">Logout</a>
+      <a class="new-post-btn" (click)="editPost()">New Post</a>
+    </div>
+  </div>
+
+  <div class="blog-post-cards">
+    <div class="blog-post" *ngFor="let blog of blogs$ | async">
+      <div class="blog-post-card-content">
+        <div>
+          <h3 class="headerText">{{ blog.header }}</h3>
+        </div>
+        <div class="blog-post-card-buttons">
+          <div *ngIf="isUserSmallBatchDevs$ | async" class="edit-btn" (click)="editPost(blog.uid)">Edit</div>
+          <div *ngIf="blog.isPublished" class="unpublish-btn" (click)="flipPublished(blog)">Unpublish</div>
+          <div *ngIf="!blog.isPublished" class="publish-btn" (click)="flipPublished(blog)">Publish</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

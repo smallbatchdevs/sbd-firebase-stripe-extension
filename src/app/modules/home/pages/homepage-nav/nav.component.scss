@@ -1,0 +1,77 @@
+@import 'src/scss/_variables.scss';
+
+.header {
+  //width: 100%;
+  height: 260px;
+  object-fit: cover;
+  background-color: $main-dark-blue;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  overflow: hidden;
+
+  .header-links-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: .8em;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    a {
+      float: left;
+      text-decoration: none;
+      color: white;
+      padding: 0 .2em;
+      margin: .4em;
+      cursor: pointer;
+    }
+    .active-link {
+      border-bottom: solid 1px #ffcc30;
+    }
+    a:hover {
+      color: #ffcc30;
+    }
+    .header-right {
+
+      float: right;
+      color: white;
+      a:hover {
+        color: unset;
+        cursor: default;
+
+      }
+    }
+  }
+
+  .header-image-div {
+    .header-image {
+      margin-top: 2em;
+      max-width: 300px;
+    }
+  }
+
+}
+
+
+
+
+// media query standards: 650px, ...
+@media (min-width: 650px) {
+  .header-links-nav {
+    .header-links {
+      font-size: 1em;
+      a {
+      }
+      .header-right {
+        font-size: 1em;
+        a {
+        }
+      }
+    }
+    .header {
+      height: 320px;
+
+    }
+  }
+}

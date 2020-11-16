@@ -1,0 +1,120 @@
+@import "../../../../../scss/variables";
+@import "../../../../../scss/mixins";
+@import "../../../../../styles";
+
+li {
+  list-style-type: none;
+  display: block;
+  justify-content: center;
+}
+
+.login-page {
+  height: 80vh;
+  margin-top: -10px;
+  background-color: #e9e9e9;
+
+  .login-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .login-card {
+      box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+      background-color: white;
+      margin-top: 4em;
+      padding: 2em 1em;
+      width: 50%;
+      max-width: 650px;
+      border-radius: .5em;
+      text-align: center;
+      min-width: 340px;
+
+      h3 {
+        color: #28343D;
+        font-size: 2em;
+      }
+
+      hr {
+        color: #28343D;
+        width: 80%;
+      }
+
+      ul.login-providers {
+        padding: 0;
+
+        li {
+
+          .login-button {
+            @include sbd_btn;
+            @extend .centerText;
+            color: white;
+            background-color: #28343D;
+            border: solid 1px #131e2a;;
+            margin: 1em 0 0 0;
+            padding: .5em 1em;
+            width: 75%;
+
+            &.facebook, &.twitter {
+              background-color: #7B341E;
+            }
+          }
+        }
+        li:nth-child(1) {
+          margin-top: 2em;
+        }
+      }
+
+      .email-login {
+        margin-top: 2em;
+        display: inline-block;
+        .buttons {
+          display: flex;
+          justify-content: space-between;
+          .email-login-btn {
+            @include sbd_btn;
+            @extend .centerText;
+            color: white;
+            background-color: #28343D;
+            border: solid 1px #131e2a;;
+            padding: .5em 1em;
+            width: 30%;
+            font-size: .8em;
+            margin: 1em 0 0 0;
+            &.btn2 {
+              color: #28343D;
+              background-color: white;
+              justify-content: right;
+            }
+          }
+        }
+        .other-options {
+          ul {
+            padding: 0;
+            li {
+              margin-top: .8em;
+              font-size: .8em;
+            }
+          }
+        }
+      }
+    }
+
+
+    input {
+      padding: 10px 16px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #CCCCCC;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-color: white;
+      width: 100%
+    }
+  }
+}
+
+// media query standards: 650px, ...
+@media (min-width: 650px) {
+
+}

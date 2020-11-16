@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~prismjs/plugins/toolbar/prism-toolbar.css";
+@import "~prismjs/themes/prism-okaidia";
+@import 'scss/_variables.scss';
+@import '~firebaseui/dist/firebaseui.css';
+
+html, body, p, h3 {
+  margin: 0;
+}
+
+* {
+  font-family: "Nunito", serif;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floatRight {
+  float: right;
+}
+
+textarea {
+  //width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: .2rem;
+  background-color: #f8f8f8;
+  resize: none;
+  margin: 8px 0;
+}
+
+input[type=text], select {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid #ccc;
+  border-radius: .2rem;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+}

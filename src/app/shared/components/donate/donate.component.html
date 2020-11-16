@@ -1,0 +1,12 @@
+<div class="donate centerText">
+  <div *ngIf="!isGettingCheckout">
+    <div class="header">Support Small Batch Devs!</div>
+    $<input class="donateInput" type="number" [(ngModel)]="donationAmount" /> (USD)
+    <button id="checkout-button" (click)="donate()">Donate!</button>
+  </div>
+  <div *ngIf="isGettingCheckout">
+    <div class="header">Thank You!</div>
+    <div>Sending You To Checkout...</div>
+    <app-sbd-spinner></app-sbd-spinner>
+  </div>
+</div>

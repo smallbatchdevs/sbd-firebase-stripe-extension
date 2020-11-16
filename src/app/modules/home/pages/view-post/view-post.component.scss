@@ -1,0 +1,72 @@
+@import "../../../../../scss/variables";
+@import "../../../../../scss/mixins";
+@import "../../../../../styles";
+
+.view-post {
+  justify-content: center;
+  .bodyText{
+    padding: 0 .5em;
+  }
+
+  .subheader {
+    padding: 0 .5em;
+  }
+
+  .readBtn {
+    @include sbd_btn;
+    @extend .centerText;
+    color: white;
+    width: auto;
+    background-color: $main-dark-blue;
+    border: 1px solid $main-dark-blue;
+    margin: 1em 0;
+  }
+
+  .container {
+    padding: 0 1em;
+    .iframe-container {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      padding-top: 56.25%;
+
+      .responsive-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .bodyText {
+    margin: 0 1em;
+  }
+
+}
+
+
+// media query standards: 650px, ...
+@media (min-width: 650px) {
+  .view-post {
+    max-width: 800px;
+    margin: auto;
+    .bodyText {
+      padding: 0 3em;
+    }
+
+    .subheader {
+      padding: 0 2em;
+    }
+
+    .container {
+      justify-content: center;
+      width: 60%;
+      margin: auto;
+    }
+
+  }
+}

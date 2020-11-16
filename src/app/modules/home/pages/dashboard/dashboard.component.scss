@@ -1,0 +1,88 @@
+@import "../../../../../scss/variables";
+@import "../../../../../scss/mixins";
+@import "../../../../../styles";
+
+.dashboard {
+
+  .top-buttons {
+    display: flex;
+    margin: 1em;
+    .logout-btn {
+      @include sbd_btn;
+      color: $main-dark-blue;
+      background-color: white;
+      border: solid 1px $main-dark-blue;
+      margin-right: .5em;
+    }
+
+    .new-post-btn {
+      @include sbd_btn;
+      color: $yellow-100;
+      background-color: $main-yellow;
+      border: solid 1px $yellow-600;
+      margin-right: 10px;
+    }
+  }
+
+
+  .blog-post-cards {
+    margin-top: 3em;
+    padding: .4em 2em;
+    position: absolute;
+    width: auto;
+
+    .blog-post {
+      display: block;
+      padding: .6em 1.5em;
+      border-left: solid 1px #E0E0E0;
+      margin-top: .1em;
+      width: auto;
+
+      .headerText {
+        color: $main-dark-blue;
+        font-size: 1em;
+      }
+
+      .blog-post-card-buttons {
+        display: flex;
+        //justify-content: space-between;
+        .edit-btn {
+          @include sbd_btn;
+          @extend .centerText;
+          color: $gray-900;
+          background-color: $gray-300;
+          border: solid 1px $gray-400;
+          margin-right: .8em;
+        }
+
+        .publish-btn {
+          @include sbd_btn;
+          @extend .centerText;
+          color: $green-800;
+          background-color: $green-300;
+          border: solid 1px $green-400;
+        }
+
+        .unpublish-btn {
+          @include sbd_btn;
+          @extend .centerText;
+          color: $red-800;
+          background-color: $red-300;
+          border: solid 1px $red-400;
+        }
+      }
+
+
+    }
+  }
+}
+
+// media query standards: 650px, ...
+@media (min-width: 650px) {
+  .dashboard {
+    .blog-post-cards {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+    }
+  }
+}

@@ -1,0 +1,49 @@
+@import '../../../../../src/scss/_variables.scss';
+
+.donate {
+  margin: 5px;
+  padding: 10px;
+  background-color: $secondary-dark-blue;
+  border: solid 2px $main-dark-blue;
+  color: $blue-100;
+  border-radius: 10px;
+  div {
+    margin: 5px
+  }
+  .header {
+    font-weight: bold;
+  }
+  button {
+    font-size: medium;
+    border: none;
+    background: white;
+    color: black;
+    font-weight: 100;
+    padding: 5px;
+    border-radius: 6px;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+  }
+
+  button:hover {
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 3px;
+    background: $main-yellow;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.3s ease 0s;
+  }
+  input[type=number], select {
+    margin-left: 3px;
+    padding: 3px;
+    display: inline-block;
+    border: 1px solid white;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+}
+
+.donateInput {
+  width: 75px
+}
